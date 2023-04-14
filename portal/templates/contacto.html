@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Assets/icono.ico">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Contacto</title>
+</head>
+<body>
+
+    <header>
+        <nav class="menu-navegacion container">
+            <div class="logo">
+                <a href="/index.html"><img src="/Assets/LogoVet.png" alt="logo"></a>
+                
+            </div>
+    
+            <div class="enlaces">
+    
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="adopciones.html">Adopciones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div>
+
+        <section class="foto-perros">
+  
+            <img src="/Assets/WhatsApp Image 2022-10-22 at 12.17.43.png" alt="">
+   
+          </section>
+        
+    <section class="arriba">
+
+        <div class="texto">
+            
+                <h1>Contacto</h1>
+                <h2>Si tenés alguna duda o sugerencia, dejanos tu mensaje</h2>
+       
+       </div>
+
+    </section>
+
+    <section>
+
+        <form action="https://formspree.io/f/mdojwbye" method="POST" id="form" class="Formulario" onsubmit="return validar ();">
+ 
+            <h1 class="Formulario_Título">Contáctenos</h1>
+         
+           
+            <input type="text" id="Name" name="Name" class="Formulario_input" required>
+            <label for="Name" class="Formulario_label">Nombre</label>
+         
+           
+            <input type="text" id= "LastName" name="LastName" class="Formulario_input" required>
+            <label for="LastName" class="Formulario_label">Apellido</label>
+         
+         
+            <input type="email" id="EmailDeContacto" name="EmailDeContacto" class="Formulario_input" required>
+            <label for="EmailDeContacto" class="Formulario_label">Email de contacto</label>
+
+            <input type="text" id="Asunto" name="Asunto" class="Formulario_input" required>
+    <label for="Asunto" class="Formulario_label">Asunto</label>
+ 
+    <b><label for="1" class="Select_label">Seleccione Especialidad</label></b><br><br>
+    <select name="Especialidades" id="1" class="Select">
+        <option value="">Clínica</option>
+        <option value="">Laboratorio</option>
+        <option value="">Cardiología</option>
+        <option value="">Cirugía</option>
+        <option value="">Oncología</option>
+        <option value="">Neurología</option>
+    </select>
+  <br><br><br>
+    <input type="text" id="Comentario" name="Comentario" class="Formulario_input" required>
+    <label for="Comentario" class="Formulario_label">Deje su comentario</label>
+ 
+    <input type="submit" class="Formulario" value="Enviar">
+ 
+ 
+</form>
+<script src="app.js"></script>
+
+    </section>
+
+        </div>
+
+
+
+    </main>
+
+  
+    <footer>
+        
+        <div  class="menu-navegacion container">
+            
+            <div class="pagos">
+                <h3>Medios de pago</h3>
+
+                <img src="/Assets/simbolos.png" alt="">
+                <img class="mp" src="/Assets/mercado pago.png" alt="">
+                
+                
+            </div>
+
+            <div class="perritos">
+                <img src="/Assets/2008.i126.001.P.m005.c33.pets growth stages set.jpg" alt="">
+            </div>
+
+        
+
+            <div class="redes-sociales">
+                <a href="https:wwwa.facebook.com/" target="_blank" ><i class="fa-brands fa-facebook"></i></a>
+                <a href="https:www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https:www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>    
+            </div>
+    
+   
+
+</footer>
+<script src="https://kit.fontawesome.com/bb997cbe6f.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>
