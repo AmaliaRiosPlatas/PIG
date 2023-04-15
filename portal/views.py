@@ -14,4 +14,6 @@ def adopciones(request):
 def contacto(request):
     return render(request,'contacto.html')
     
+# def probarBase(request):
+#     return render (request, 'base.html')
 

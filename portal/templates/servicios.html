@@ -9,7 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href={% static 'CSS/style.css' %}>
+
 </head>
 <body>
     <header>
@@ -37,7 +40,7 @@
         <img src="/Assets/WhatsApp Image 2022-10-22 at 12.17.43.png" alt="">
 
 
-      </section>
+    </section>
 
     
 
@@ -49,21 +52,21 @@
 
     </section>
 
-        <div class="box-container">
-            <div class="box">
-                <i class="fa-solid fa-shield-dog"></i>
-                <h3>Tu mascota es nuestra prioridad</h3>
-            </div>
-            <div class="box">
-                <i class="fa-solid fa-briefcase-medical"></i>
-                <h3>Atención personalizada</h3>
-                <h3>24 hs</h3>
-            </div>
-            <div class="box">
-                <i class="fa-solid fa-pills"></i>
-                <h3>Medicación necesaria para tu mascota</h3>
-            </div>
+    <div class="box-container">
+        <div class="box">
+            <i class="fa-solid fa-shield-dog"></i>
+            <h3>Tu mascota es nuestra prioridad</h3>
         </div>
+        <div class="box">
+            <i class="fa-solid fa-briefcase-medical"></i>
+            <h3>Atención personalizada</h3>
+            <h3>24 hs</h3>
+        </div>
+        <div class="box">
+            <i class="fa-solid fa-pills"></i>
+            <h3>Medicación necesaria para tu mascota</h3>
+        </div>
+    </div>
 
     <section class="content nosotros">
         <h2 class="title-nosotros">Nosotros</h2>

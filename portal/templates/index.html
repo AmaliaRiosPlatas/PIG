@@ -8,23 +8,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/portal/statics/style.css">
-   
+    <!-- <link rel="stylesheet" href="CSS/style.css"> -->
+    
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href={% static "CSS/style.css" %}>
+
     <title>Inicio</title>
 </head>
 <body>
     <header>
         <nav class="menu-navegacion container">
             <div class="logo">
-                <a href="/index.html"><img src="/Assets/LogoVet.png" alt="logo"></a>
+                <a href="{% url 'inicio' %}">{% load static %}
+                    <img src="{% static 'IMG/LogoVet.png' %}" alt="LogoNuevaVersion">
+                </a>
                 
             </div>
     
             <div class="enlaces">
     
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'servicios' %}">Servicios</a></li>
                     <li><a href="adopciones.html">Adopciones</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
@@ -37,9 +42,9 @@
 
         <section class="foto-perros">
   
-                <img src="/Assets/WhatsApp Image 2022-10-22 at 12.17.43.png" alt="">
+                <img src="{% static 'IMG/WhatsApp Image 2022-10-22 at 12.17.43.png' %}" alt="Logowhatsapp">
        
-              </section>
+        </section>
             
         <section class="arriba">
 
@@ -48,9 +53,9 @@
                     <h1>Clínica Veterinaria Animalis</h1>
                     <h2>Atención veterinaria de primer nivel</h2>
                     <h3>Comprometidos con la salud y el bienestar de tu mascota</h3>
-                   
+                    
 
-           </div>
+            </div>
 
         </section>
 
@@ -60,7 +65,7 @@
 
                 <div class="info-nombre">
 
-                    <a href="/servicios.html"><img src="/Assets/adorable-kitty-with-monochrome-wall-behind-her.jpg" alt=""></a>
+                    <a href="/servicios.html"><img src="{% static 'IMG/adorable-kitty-with-monochrome-wall-behind-her.jpg' %}" alt=""></a>
                 </div>
               
                 <div class="info-texto">
@@ -73,7 +78,7 @@
 
                 
                 <div class="info-nombre">
-                    <a href="/adopciones.html"><img src="/Assets/adorable-brown-white-basenji-dog-smiling-giving-high-five-isolated-white (2).jpg" alt=""></a>
+                    <a href="/adopciones.html"><img src="{% static 'IMG/adorable-brown-white-basenji-dog-smiling-giving-high-five-isolated-white (2).jpg' %}" alt=""></a>
                 </div>
               
                 <div class="info-texto">
@@ -85,7 +90,7 @@
 
             <div class="info3">
                 <div class="info-nombre">
-                    <a href="/contacto.html"><img src="/Assets/cute-little-dog-impersonating-business-person.jpg" alt=""></a>
+                    <a href="/contacto.html"><img src="{% static 'IMG/cute-little-dog-impersonating-business-person.jpg' %}" alt=""></a>
                     
                 </div>
                
@@ -110,12 +115,12 @@
              <div class="carrousel">
 
                 <ul>
-                    <li><img src="/Assets/Testimonio1.jpg" alt=""></li>
-                    <li><img src="/Assets/Testimonio2.jpg" alt=""></li>
-                    <li><img src="/Assets/Testimonio3.jpg" alt=""></li>
-                    <li><img src="/Assets/Testimonio4.jpg" alt=""></li>
-                    <li><img src="/Assets/Testimonio5.jpg" alt=""></li>
-                    <li><img src="/Assets/Testimonio6.jpg" alt=""></li>
+                    <li><img src="{% static 'IMG/Testimonio1.jpg' %}" alt=""></li>
+                    <li><img src="{% static 'IMG/Testimonio2.jpg' %}" alt=""></li>
+                    <li><img src="{% static 'IMG/Testimonio3.jpg' %}" alt=""></li>
+                    <li><img src="{% static 'IMG/Testimonio4.jpg' %}" alt=""></li>
+                    <li><img src="{% static 'IMG/Testimonio5.jpg' %}" alt=""></li>
+                    <li><img src="{% static 'IMG/Testimonio6.jpg' %}" alt=""></li>
                   
                 </ul>
 
@@ -151,14 +156,14 @@
                 <div class="pagos">
                     <h3>Medios de pago</h3>
 
-                    <img src="/Assets/simbolos.png" alt="">
-                    <img class="mp" src="/Assets/mercado pago.png" alt="">
+                    <img src="{% static 'IMG/simbolos.png' %}" alt="">
+                    <img class="mp" src="{% static 'IMG/mercado pago.png' %}" alt="">
                    
                     
                 </div>
 
                 <div class="perritos">
-                    <img src="/Assets/2008.i126.001.P.m005.c33.pets growth stages set.jpg" alt="">
+                    <img src="{% static 'IMG/2008.i126.001.P.m005.c33.pets growth stages set.jpg' %}" alt="">
                 </div>
 
             
