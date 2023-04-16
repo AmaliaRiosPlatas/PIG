@@ -8,14 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
     <title>Adopciones</title>
 </head>
+
+{% load static %}
+<link type="text/css" rel="stylesheet" href={% static "CSS/style.css" %}>
+
 <body>
     <header>
         <nav class="menu-navegacion container">
             <div class="logo">
-              <a href="/index.html"><img src="/Assets/LogoVet.png" alt="logo"></a>
+              <a href="{% url 'inicio' %}"><img src="{% static 'IMG/LogoVet.png' %}" alt="logo"></a>
                 
             </div>
 
@@ -30,10 +34,10 @@
           
     
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="adopciones.html">Adopciones</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                    <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                    <li><a href="{% url 'adopciones' %}">Adopciones</a></li>
+                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
                 </ul>
             </div>
         </nav>
@@ -43,7 +47,7 @@
 
         <section class="foto-perros">
   
-          <img src="/Assets/WhatsApp Image 2022-10-22 at 12.17.43.png" alt="">
+          <img src="{% static 'IMG/WhatsApp Image 2022-10-22 at 12.17.43.png' %}" alt="">
   
   
         </section>
@@ -66,7 +70,7 @@
         </div>
   
         <div class="div2">
-          <img class="card perros" src="/Assets/PALMA.jpg" alt="Palma">
+          <img class="card perros" src="{% static 'IMG/PALMA.jpg' %}" alt="Palma">
   
           <div class="card caracteristicas"> 
             <h2>PALMA</h2> 
@@ -83,7 +87,7 @@
        
   
         <div class="div2">
-          <img class="card perros" src="/Assets/michael-g-1mF2PVkIZSw-unsplash (2).jpg" alt="Bronco">
+          <img class="card perros" src="{% static 'IMG/michael-g-1mF2PVkIZSw-unsplash (2).jpg' %}" alt="Bronco">
           <div class="card caracteristicas"> 
             <h2>BRONCO</h2>
             <P>Tremendamente leal</P>
@@ -97,7 +101,7 @@
         </div>
   
         <div class="div2">
-          <img class="card perros" src="/Assets/TORO.jpg" alt="Toro">
+          <img class="card perros" src="{% static 'IMG/TORO.jpg' %}" alt="Toro">
           <div class="card caracteristicas">
             <h2>TORO</h2>
             <P>Le encanta recibir invitados</P>
@@ -110,7 +114,7 @@
         </div>
   
         <div class="div2">
-          <img class="card perros" src="/Assets/michael-g-1Y01GXe8TIM-unsplash-min.jpg" alt="Charly">
+          <img class="card perros" src="{% static 'IMG/michael-g-1Y01GXe8TIM-unsplash-min.jpg' %}" alt="Charly">
           <div class="card caracteristicas"> 
             <h2>CHARLY</h2>
               <P>Juguetón</P>
@@ -123,7 +127,7 @@
         </div>
   
         <div class="div2">
-          <img class="card perros" src="/Assets/LUCY.jpg" alt="Lucy">
+          <img class="card perros" src="{% static 'IMG/LUCY.jpg' %}" alt="Lucy">
           <div class="card caracteristicas"> 
           <h2>LUCY</h2>
           <P>Le encanta tirarse a tomar sol</P>
@@ -139,7 +143,7 @@
        
   
         <div class="div2">
-          <img class="card perros" src="/Assets/PONCHO.jpg" alt="Poncho">  <div class="card caracteristicas"> 
+          <img class="card perros" src="{% static 'IMG/PONCHO.jpg' %}" alt="Poncho">  <div class="card caracteristicas"> 
             <h2>PONCHO</h2>
             <P>Tamaño mini</P>
             <p>Le encanta viajar en auto</p>
@@ -153,7 +157,7 @@
   
         <div class="contenido">
           <h3>Si querés adoptar a alguno de ellos o querés recibir más información, comunicate con El Campito Refugio </h3> 
-          <a href="https://www.elcampitorefugio.org/" target="_blank"><img src="/Assets/elcampitologo.png" alt=""></a>
+          <a href="https://www.elcampitorefugio.org/" target="_blank"><img src="{% static 'IMG/elcampitologo.png' %}" alt=""></a>
           
         </div>
   
@@ -169,13 +173,14 @@
             <div class="pagos">
                 <h3>Medios de pago</h3>
 
-                <img src="/Assets/simbolos.png" alt="">
-                <img class="mp" src="/Assets/mercado pago.png" alt="">
+                <img src="{% static 'IMG/simbolos.png' %}" alt="">
+                <img class="mp" src="{% static 'IMG/mercado pago.png' %}" alt="">
+               
                 
             </div>
 
             <div class="perritos">
-                <img src="/Assets/2008.i126.001.P.m005.c33.pets growth stages set.jpg" alt="">
+                <img src="{% static 'IMG/2008.i126.001.P.m005.c33.pets growth stages set.jpg' %}" alt="">
             </div>
 
         

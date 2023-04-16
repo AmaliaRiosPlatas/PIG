@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='inicio'),
     path('servicios/', views.servicios, name='servicios'),
-    path('adopciones/', views.adopciones),
-    path('contacto/', views.contacto),
+    path('adopciones/', views.adopciones, name='adopciones'),
+    path('contacto/', views.contacto, name='contacto'),
     # path('base/', views.probarBase, name='base'),
 ]
