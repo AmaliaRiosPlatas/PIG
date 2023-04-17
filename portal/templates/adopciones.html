@@ -1,57 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/Assets/icono.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
-    
-    <title>Adopciones</title>
-</head>
+{% extends "base.html" %}
 
+{% block content %}
 {% load static %}
-<link type="text/css" rel="stylesheet" href={% static "CSS/style.css" %}>
-
-<body>
-    <header>
-        <nav class="menu-navegacion container">
-            <div class="logo">
-              <a href="{% url 'inicio' %}"><img src="{% static 'IMG/LogoVet.png' %}" alt="logo"></a>
-                
-            </div>
-
-            <input type="checkbox" id="menu-check">
-            <label id="menu" for="menu-check">
-              <span id="menu-abrir">&#9776;</span>
-              <span id="menu-cerrar">X</span>
-
-            </label>
-
-            <div class="enlaces">
-          
-    
-                <ul>
-                    <li><a href="{% url 'inicio' %}">Inicio</a></li>
-                    <li><a href="{% url 'servicios' %}">Servicios</a></li>
-                    <li><a href="{% url 'adopciones' %}">Adopciones</a></li>
-                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-
-        <section class="foto-perros">
-  
-          <img src="{% static 'IMG/WhatsApp Image 2022-10-22 at 12.17.43.png' %}" alt="">
-  
-  
-        </section>
-  
+ 
         <section class="arriba">
   
           <div class="texto">
@@ -165,37 +116,7 @@
        
       </main>
 
+      {% endblock %}
 
-      <footer>
-        
-        <div  class="menu-navegacion container">
-            
-            <div class="pagos">
-                <h3>Medios de pago</h3>
-
-                <img src="{% static 'IMG/simbolos.png' %}" alt="">
-                <img class="mp" src="{% static 'IMG/mercado pago.png' %}" alt="">
-               
-                
-            </div>
-
-            <div class="perritos">
-                <img src="{% static 'IMG/2008.i126.001.P.m005.c33.pets growth stages set.jpg' %}" alt="">
-            </div>
-
-        
-
-            <div class="redes-sociales">
-                <a href="https:wwwa.facebook.com/" target="_blank" ><i class="fa-brands fa-facebook"></i></a>
-                <a href="https:www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https:www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>    
-            </div>
-    
-   
-
-</footer>
-<script src="https://kit.fontawesome.com/bb997cbe6f.js" crossorigin="anonymous"></script>
 
     
-</body>
-</html>
