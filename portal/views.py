@@ -3,12 +3,12 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    context = {'titulo' : 'Inicio'}
-    return render(request,'index.html', context)
+    
+    return render(request,'index.html')
 
 def servicios(request):
-    context = {'titulo' : 'Inicio'}
-    return render(request,'servicios.html', context)
+    
+    return render(request,'servicios.html')
 
 def adopciones(request):
     return render(request,'adopciones.html')
