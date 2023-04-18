@@ -15,7 +15,6 @@ Including another URLconf
 """
 
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from portal import views
@@ -24,6 +23,5 @@ urlpatterns = [
     path('', views.index, name='inicio'),
     path('servicios/', views.servicios, name='servicios'),
     path('adopciones/', views.adopciones, name='adopciones'),
-    path('contacto/', views.contacto, name='contacto'),
-    
+    path('contacto/', views.contacto, name='contacto'),    
 ]

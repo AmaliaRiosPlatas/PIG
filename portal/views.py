@@ -4,17 +4,17 @@ from django.shortcuts import render
 
 def index(request):
     
-    return render(request,'index.html')
+    return render(request,'portal/index.html')
 
 def servicios(request):
     
-    return render(request,'servicios.html')
+    return render(request,'portal/servicios.html')
 
 def adopciones(request):
-    return render(request,'adopciones.html')
+    return render(request,'portal/adopciones.html')
 
 def contacto(request):
-    return render(request,'contacto.html')
+    return render(request,'portal/contacto.html')
     
 # def probarBase(request):
 #     return render (request, 'base.html')
