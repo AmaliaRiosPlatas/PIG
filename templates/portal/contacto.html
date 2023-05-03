@@ -4,11 +4,13 @@
 
 {% load static %}
 
-<form id="contact-form" name="contact-form" action="{% url 'contacto' %}" method="POST">
+<form id="contact-form" name="contact-form" action="{% url 'contacto' %}" method="POST" class="Formulario">
+
     {% csrf_token %}
 
 
     {{ contacto_form.as_p }}
+    <br>
     
     <div class="text-center text-md-left mt-3">
         <button class="btn btn-primary" type="submit">Enviar</button>
@@ -71,6 +73,7 @@
 
         </div>
     </main>\--> 
+</form>
 
 {% endblock %}
 
