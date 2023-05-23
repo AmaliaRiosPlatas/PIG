@@ -661,11 +661,9 @@ footer{
 /* FORMULARIO */
 
 .Formulario {
-    width: 500px;
-    max-width: 100%;
-    margin: auto;
+    width: 200px;
     margin-top: 30px;
-    
+    margin-left: 0;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
     position: relative;
 }
