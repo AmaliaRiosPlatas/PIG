@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponse, HttpResponseNotAllowed
@@ -25,18 +26,14 @@ def contacto(request):
         mensaje = None
         contacto_form = ContactoForm(request.POST)
         mensaje = 'Tu mensaje ha sido enviado. Te responderemos a la brevedad'
-
     elif request.method == 'GET':
         contacto_form = ContactoForm()
-
     else:
-        return HttpResponseNotAllowed(f"Metodo {request.method} no soportado")
-    
+        return HttpResponseNotAllowed(f"Metodo {request.method} no soportado")  
 
     context = {
         'contacto_form' : contacto_form
     }
-
     return render(request,'portal/contacto.html', context)
 
 

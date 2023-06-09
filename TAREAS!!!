@@ -1,0 +1,14 @@
+-ADMIN
+    - Modelo
+
+    usuario: SUser
+    pass: suser123
+
+-LOGIN
+    -logueo
+    -logout 
+    -nuevo cliente
+
+-Paginas cliente y de mascotas
+    -Nueva Mascota
+    -Listado de Mascotas
