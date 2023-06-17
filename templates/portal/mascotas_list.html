@@ -1,0 +1,61 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Nombre</td>
+            <td>Raza</td>
+            <td>Edad</td>
+            <td>Tamaño</td>
+            <td>Vacunas</td>
+            <td>Veterinaria</td>
+            <td>Cliente</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% if object_list %}
+        {% for mascotas in object_list %}
+
+        <tr>
+            <td>{{ mascotas.id }}</td>
+            <td>{{ mascotas.nombre }}</td>
+            <td>{{ mascotas.raza }}</td>
+            <td>{{ mascotas.edad }}</td>
+            <td>{{ mascotas.tamanio }}</td>
+            <td>{{ mascotas.vacuna }}</td>
+            <td>{{ mascotas.veterinaria }}</td>
+            <td>{{ mascotas.cliente.nombre }} {{ mascotas.cliente.apellido }}</td>
+
+            <td>
+
+                <a href="">Editar</a>
+                <a href="">Eliminar</a>
+                
+            </td>
+
+
+
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h2>No hay datos ingresados</h2>
+
+        {% endif %}
+
+
+    </tbody>
+
+
+
+</table>
+
+
+
+
+
+{% endblock %}

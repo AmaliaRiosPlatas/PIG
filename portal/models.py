@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -18,7 +19,14 @@ class Cliente (models.Model):
     dni = models.IntegerField(verbose_name= 'DNI')
     #mascota = models.CharField(max_length=30, verbose_name= 'Nombre de mascota')
     veterinaria = models.ForeignKey(Veterinaria, on_delete= models.CASCADE)
+    usuario = models.CharField(max_length=30, verbose_name= 'Usuario')
+    contrasenia = models.CharField(max_length=30, verbose_name= 'Contraseña')
 
+class Vacuna (models.Model):
+    vacuna = models.CharField(max_length=30, verbose_name= 'Vacunas')
+
+    def __str__(self):
+        return f"vacunas: {self.vacunas}"
 
 
 class Mascota (models.Model):
@@ -27,7 +35,12 @@ class Mascota (models.Model):
     raza = models.CharField(max_length=50, verbose_name= 'Raza')
     edad = models.IntegerField(verbose_name= 'Edad')
     tamanio = models.CharField(max_length=50, verbose_name= 'Tamanio')
-    cliente = models.ForeignKey(Cliente, verbose_name= 'Cliente', on_delete= models.CASCADE)
+    vacuna = models.ManyToManyField(Vacuna, verbose_name= 'Vacunas', blank=True)
+    cliente = models.ForeignKey(Cliente, null=True, blank=True, verbose_name= 'Cliente', on_delete= models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse('mascotas_list')
+    
 
 
 class Servicio (models.Model):

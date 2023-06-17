@@ -1,0 +1,15 @@
+{% extends "portal/base.html" %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <h3>¿Quiere eliminar esta mascota?</h3>
+    <button type="submit">Sí</button>
+    <a href="{% url 'mascotas_list' %}">Cancelar</a>
+
+    
+</form>

@@ -9,11 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
     
+    
     <!-- <link rel="stylesheet" href="CSS/style.css"> -->
     
     {% load static %}
     <link type="text/css" rel="stylesheet" href={% static "CSS/style.css" %}>
-
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">-->
     <title>Inicio</title>
 </head>
 <body>
@@ -33,6 +34,8 @@
                     <li><a href="{% url 'servicios' %}">Servicios</a></li>
                     <li><a href="{% url 'adopciones' %}">Adopciones</a></li>
                     <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+
                 </ul>
             </div>
         </nav>
