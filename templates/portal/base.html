@@ -35,6 +35,10 @@
                     <li><a href="{% url 'adopciones' %}">Adopciones</a></li>
                     <li><a href="{% url 'contacto' %}">Contacto</a></li>
                     <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                    {% if user.is_authenticated %}
+                    <p>Hola{{user}}</p>
+                    <li><a href="{% url 'cerrarSesion' %}"></a>LogOut</li>
+                    {% endif %}
 
                 </ul>
             </div>

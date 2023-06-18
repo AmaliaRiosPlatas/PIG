@@ -22,5 +22,6 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portal.urls')),
+    path('log/', include('logueo.urls')),
        
 ]

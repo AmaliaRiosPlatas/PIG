@@ -3,7 +3,6 @@ from django import forms
 from .models import Mascota, Cliente
 
 
-
 class ContactoForm(forms.Form):
     
     nombre = forms.CharField(label = 'Nombre', max_length=30)
@@ -34,20 +33,20 @@ class NuevaMascotaForm(forms.ModelForm):
             'raza': forms.TextInput(attrs={'class':''}),
             'edad': forms.TextInput(attrs={'class':''}),
             'tamanio': forms.TextInput(attrs={'class':''}),
-            'vacunas': forms.Select(attrs={'class':''}),
+            # 'vacunas': forms.Select(attrs={'class':''}),
             'veterinaria': forms.Select(attrs={'class':''}),
         }
 
 
-class LoginForm(forms.Form):
-    usuario=forms.CharField(label="Usuario", max_length=50, widget=forms.TextInput(attrs={'class':'usuario'}))
-    contrasenia=forms.CharField(label="Contraseña", max_length=50, widget=forms.TextInput(attrs={'class':'contrasenia'}))
+# class LoginForm(forms.Form):
+#     usuario=forms.CharField(label="Usuario", max_length=50, widget=forms.TextInput(attrs={'class':'usuario'}))
+#     contrasenia=forms.CharField(label="Contraseña", max_length=50, widget=forms.TextInput(attrs={'class':'contrasenia'}))
 
 
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ['nombre', 'apellido', 'telefono', 'domicilio', 'email', 'dni', 'veterinaria', 'usuario', 'contrasenia']
+        fields = ['nombre', 'apellido', 'telefono', 'domicilio', 'email', 'dni', 'veterinaria']
         widgets ={
             'nombre': forms.TextInput(attrs={'class':''}),
             'apellido': forms.TextInput(attrs={'class':''}),
@@ -56,8 +55,14 @@ class ClienteForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'class':''}),
             'dni': forms.TextInput(attrs={'class':''}),
             'veterinaria': forms.Select(attrs={'class':''}),
-            'usuario': forms.TextInput(attrs={'class':''}),
-            'contrasenia': forms.PasswordInput(attrs={'class':''}),
+            # 'usuario': forms.TextInput(attrs={'class':''}),
+            # 'contrasenia': forms.PasswordInput(attrs={'class':''}),
 
         }
+
+# class UsuarioForm(forms.ModelForm):
+#     class Meta:
+#         model = Usuario
+#         fields = ['usuario', 'contrasenia']
+#         labels = {'usuario':'Usuario', 'contrasenia':'Contraseña'}
 

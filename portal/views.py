@@ -1,11 +1,12 @@
 
 from django.shortcuts import render, redirect
+from django.contrib.auth import login, logout, authenticate
 from django.http import HttpResponse
 from django.http import HttpResponse, HttpResponseNotAllowed
 from django.template import loader
 
 from portal.forms import ContactoForm, ClienteForm, NuevaMascotaForm
-from portal.forms import LoginForm
+
 
 from portal.models import Cliente, Mascota
 
@@ -50,21 +51,33 @@ def contacto(request):
     return render(request,'portal/contacto.html', context)
 
 
-def login(request):
-
-    if(request.method == 'POST'):
-        mensaje = None
-        login_form = LoginForm(request.POST)
-        mensaje = 'Tu mensaje ha sido enviado. Te responderemos a la brevedad'
-    elif request.method == 'GET':
-        login_form = LoginForm()
-    else:
-        return HttpResponseNotAllowed(f"Metodo {request.method} no soportado")  
-
-    context = {
-        'login_form' : login_form
-    }
-    return render(request,'portal/login.html', context)
+# def login(request):
+#     if(request.method == 'POST'):
+#         mensaje = None
+#         login_form = LoginForm(request.POST)
+#         mensaje = 'Tu mensaje ha sido enviado. Te responderemos a la brevedad'
+#     elif request.method == 'GET':
+#         login_form = LoginForm()
+#     else:
+#         return HttpResponseNotAllowed(f"Metodo {request.method} no soportado")  
+#     context = {
+#         'login_form' : login_form
+#     }
+#     return render(request,'portal/login.html', context)
+# def inicioSesion(request):
+#     if request.method == 'GET':
+#         return render(request, 'portal/login.html',{'form': UsuarioForm})
+#     elif  request.method=='POST':
+#         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+#         # print(user)
+#         # print(request.POST)
+#         if user is None:
+#          return render(request, 'portal/login.html',{
+#             'form': UsuarioForm,
+#             'error': 'Usuario o contraseña incorrecta'})
+#         else:
+#             login(request, user)
+#             return redirect('')
 
 
 #def login(request):
@@ -78,10 +91,35 @@ def login(request):
     
 #    return render(request,'portal/login.html', {'form':form})
 
-def registro(request):
-    return render(request,'registro.html')
-
-
+# def registro(request):
+#     if request.method=='GET':
+#         context={'form1':UsuarioForm,
+#                 'form2':ClienteForm
+#                 }
+#         return render(request,'portal/registro.html', context)
+#     elif request.method=='POST':
+#         try:
+#             form1=UsuarioForm(request.POST)
+#             print(form1)
+#             form2=ClienteForm(request.POST)
+#             print(form2)
+#             if form1.is_valid() and form2.is_valid():
+#                 form1.save()
+#                 form2.save()
+#                 return redirect('login')
+#         except:
+#              context={'form1':UsuarioForm,
+#                 'form2':ClienteForm,
+#                 'error':'Algo salió mal'
+#                 }
+#         return render(request,'portal/registro.html', context)
+#     else:
+#         context={'form1':UsuarioForm,
+#                 'form2':ClienteForm,
+#                 'error':'no funciona'
+#                 }
+#         return render(request,'portal/registro.html', context)
+        
 
 
     
