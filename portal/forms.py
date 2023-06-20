@@ -47,18 +47,17 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = ['nombre', 'apellido', 'telefono', 'domicilio', 'email', 'dni', 'veterinaria']
+        labels = {'nombre':'Nombre', 'apellido':'Apellido', 'telefono':'Telefono', 'domicilio':'Domicilio', 'email':'E-mail', 'dni':'DNI', 'veterinaria':'Sucursal'}
         widgets ={
+            
             'nombre': forms.TextInput(attrs={'class':''}),
             'apellido': forms.TextInput(attrs={'class':''}),
-            'telefono': forms.TextInput(attrs={'class':''}),
+            'telefono': forms.NumberInput(attrs={'class':''}),
             'domicilio': forms.TextInput(attrs={'class':''}),
             'email': forms.EmailInput(attrs={'class':''}),
-            'dni': forms.TextInput(attrs={'class':''}),
+            'dni': forms.NumberInput(attrs={'class':''}),
             'veterinaria': forms.Select(attrs={'class':''}),
-            # 'usuario': forms.TextInput(attrs={'class':''}),
-            # 'contrasenia': forms.PasswordInput(attrs={'class':''}),
-
-        }
+           }
 
 # class UsuarioForm(forms.ModelForm):
 #     class Meta:

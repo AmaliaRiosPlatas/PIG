@@ -8,6 +8,8 @@ class Veterinaria (models.Model):
     nombre = models.CharField(max_length=30, verbose_name= 'Veterinaria')
     direccion = models.CharField(max_length=30, verbose_name= 'Direccion')
     telefono = models.IntegerField(verbose_name='Telefono')
+    def __str__(self):
+        return f"{self.nombre}"
     
 
 class Servicio (models.Model):
@@ -16,7 +18,7 @@ class Servicio (models.Model):
     veterinaria = models.ManyToManyField(Veterinaria, verbose_name= 'Veterinaria')
     
     def __str__(self):
-        return f"nombre_servicio: {self.nombreServicio}"
+        return f"{self.nombreServicio}"
     
 
 class Cliente (models.Model):
@@ -51,9 +53,14 @@ class Mascota (models.Model):
     tamanio = models.CharField(max_length=50, verbose_name= 'Tamanio')
     # vacuna = models.ManyToManyField(Vacuna, verbose_name= 'Vacunas', blank=True)
     cliente = models.ForeignKey(Cliente, null=True, blank=True, verbose_name= 'Cliente', on_delete= models.CASCADE)
+    usuario= models.ForeignKey(User, on_delete= models.CASCADE)
 
-    def get_absolute_url(self):
-        return reverse('mascotas_list')
+    def getUsuario(self):
+        return self.usuario
+        
+
+    # def get_absolute_url(self):
+    #     return reverse('mascotas_list')
     
 
 

@@ -19,7 +19,7 @@ def iniSesion(request):
             'error': 'Usuario o contraseña incorrecta'})
         else:
             login(request, user)
-            return redirect('inicio')
+            return redirect('mascotas_list')
         
 def creaUsuario(request):
     if request.method == 'GET':
@@ -31,7 +31,7 @@ def creaUsuario(request):
             user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
             user.save()
             login(request, user)
-            return redirect('inicio')
+            return redirect('nuevoCliente')
         #    except:
         #        return render (request, 'creaUsuario.html' ,{'form':UserCreationForm, 'error':'El usuario ya existe'})
         return render (request, 'logueo/registro.html' ,{'form':UserCreationForm, 'error':'Las contraseñas no coinciden'})

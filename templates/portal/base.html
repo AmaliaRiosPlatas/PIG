@@ -34,10 +34,12 @@
                     <li><a href="{% url 'servicios' %}">Servicios</a></li>
                     <li><a href="{% url 'adopciones' %}">Adopciones</a></li>
                     <li><a href="{% url 'contacto' %}">Contacto</a></li>
-                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
                     {% if user.is_authenticated %}
-                    <p>Hola{{user}}</p>
-                    <li><a href="{% url 'cerrarSesion' %}"></a>LogOut</li>
+                    <a href="{% url 'mascotas_list' %}"><span style="color: violet;"><strong>{{user}}</strong></span></a>
+                    
+                    <li><a href="{% url 'cerrarSesion' %}">LogOut</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
                     {% endif %}
 
                 </ul>

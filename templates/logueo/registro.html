@@ -1,11 +1,11 @@
-{% extends "portal/base.html" %}
+{% extends "logueo/base.html" %}
 
 {% block content %}
 
 <main>
-<h1>Registro</h1>
-<h1>Crear Usuario</h1>
-    <div class="login_estilo">
+
+    <h1>Crear Usuario</h1>
+    <!-- <div class="login_estilo">
         {{error}}
         <form action="{% url 'registro' %}" method="POST" >
          
@@ -23,8 +23,34 @@
     
 
 
-    </div>
+    </div> -->
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col">
+            </div> -->
+            <div class="col">
+                {{error}}
+                <br>
+                <form action="{% url 'registro' %}" method="POST">
 
+
+                    {% csrf_token %}
+
+                    {{form.as_p}}
+
+
+                    <br>
+
+                    <button type="submit">Registrarse</button>
+
+                </form>
+
+
+            </div>
+            <!-- <div class="col">
+            </div> -->
+        </div>
+    </div>
 
 </main>
 

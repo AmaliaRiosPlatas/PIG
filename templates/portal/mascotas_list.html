@@ -1,6 +1,11 @@
-{% extends "portal/base.html" %}
+{% extends "logueo/base.html" %}
 
 {% block content %}
+
+
+<button><a href="{% url 'nuevoCliente' %}">Datos Cliente</a></button>
+<button><a href="{% url 'mascotas' %}">Nueva mascota</a></button>
+
 
 <table>
     <thead>
@@ -9,10 +14,9 @@
             <td>Nombre</td>
             <td>Raza</td>
             <td>Edad</td>
-            <td>Tamaño</td>
-            <td>Vacunas</td>
-            <td>Veterinaria</td>
+            <td>Tamaño</td>            
             <td>Cliente</td>
+            <td>Acciones</td>
         </tr>
     </thead>
 
@@ -26,14 +30,12 @@
             <td>{{ mascotas.raza }}</td>
             <td>{{ mascotas.edad }}</td>
             <td>{{ mascotas.tamanio }}</td>
-            <td>{{ mascotas.vacuna }}</td>
-            <td>{{ mascotas.veterinaria }}</td>
             <td>{{ mascotas.cliente.nombre }} {{ mascotas.cliente.apellido }}</td>
 
             <td>
 
-                <a href="">Editar</a>
-                <a href="">Eliminar</a>
+                <a href="{% url 'mascotas_editar' mascotas.id %}">Editar</a>
+                <a href="{% url 'mascotas_eliminar' mascotas.id %}">Eliminar</a>
                 
             </td>
 
