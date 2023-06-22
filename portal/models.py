@@ -39,6 +39,8 @@ class Cliente (models.Model):
     dni = models.IntegerField(verbose_name= 'DNI')
     #mascota = models.CharField(max_length=30, verbose_name= 'Nombre de mascota')
     veterinaria = models.ForeignKey(Veterinaria, on_delete= models.CASCADE)
+    def __str__(self):
+        return f"{self.nombre} {self.apellido} - {self.usuario}"
     
 # class Usuario(models.Model):
 #     cliente =models.ForeignKey(Cliente, on_delete= models.CASCADE)
