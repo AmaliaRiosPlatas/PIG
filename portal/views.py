@@ -17,13 +17,36 @@ from django.views.generic import ListView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
+#mail
+from django.core.mail import EmailMultiAlternatives, EmailMessage, send_mail
+from django.conf import settings
+
 
 from django.http import HttpResponseRedirect
 
 
-
-
 # Create your views here.
+
+
+
+def sacarTurno(request):
+    if request.method=='GET':
+        context={'form1':ServicioForm}
+        return render(request, 'portal/turnos.html', context)
+    elif request.method=='POST':
+        usuario=request.user
+        veterinaria=request.POST.get("veterinaria")
+        nombreServicio=request.POST.get("nombreServicio")
+        date=request.POST.get("date")
+        comentario=request.POST.get("comentario")            
+        try:
+            send_mail("Solicitud Turno","El usuario: {usuario}, del a veterinaria: {veterinaria},solicita{nombreServicio}, para el día{date} y escribe el siguiente mensaje:{comentario}","{usuario}",["to@example.com"],fail_silently=False)
+            return redirect('mascotas_list')
+        except:
+            context={'form1':ServicioForm,
+                     'error':'El turno no fue enviado, comunicarse por telefono.'}
+            return render(request, 'portal/turnos.html', context)
+
 
 def index(request):
     
@@ -264,9 +287,7 @@ def crearMascota(request):
         nuevaMascota.save()
         return redirect('mascotas_list')
     
-def sacarTurno(request):
-    context={'form1':ServicioForm}
-    return render(request, 'portal/turnos.html', context)
+
 
 
 
