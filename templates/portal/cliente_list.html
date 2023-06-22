@@ -14,37 +14,37 @@
 
             </div>
             <div class="col-md-12">
-                <h2>Registro de Mascotas</h2>
+                <h2>Datos del usuario</h2>
                 <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Nombre</th>
-                                    <th>Raza</th>
-                                    <th>Edad</th>
-                                    <th>Tamaño</th>            
-                                    <th>Cliente</th>
+                                    <th>Apellido</th>
+                                    <th>Telefono</th>
+                                    <th>Domicilio</th>
+                                    <th>Email</th>            
+                                    <th>DNI</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 {% if object_list %}
-                                {% for mascotas in object_list %}
+                                {% for user in object_list %}
 
                                 <tr>
-                                    <td>{{ mascotas.id }}</td>
-                                    <td>{{ mascotas.nombre }}</td>
-                                    <td>{{ mascotas.raza }}</td>
-                                    <td>{{ mascotas.edad }}</td>
-                                    <td>{{ mascotas.tamanio }}</td>
-                                    <td>{{ mascotas.cliente.nombre }}</td>
+                                    <td>{{ user.nombre }}</td>
+                                    <td>{{ user.apellido }}</td>
+                                    <td>{{ user.telefono }}</td>
+                                    <td>{{ user.domicilio }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>{{ user.dni }}</td>
 
                                     <td>
 
-                                        <a class="btn btn-outline-success" href="{% url 'mascotas_editar' mascotas.id %}">Editar</a>
-                                        <a class="btn btn-outline-warning" href="{% url 'mascotas_eliminar' mascotas.id %}">Eliminar</a>
+                                        <a class="btn btn-outline-success" href="{% url 'mascotas_list' %}">Volver</a>
+                                        
                                         
                                         
                                     </td>
@@ -72,18 +72,13 @@
 
                         </table>
 
-                        <button class="btn btn-light"><a href="{% url 'cliente_list' %}">Datos Cliente</a></button>
-                        <button class="btn btn-light"><a href="{% url 'mascotas' %}">Nueva mascota</a></button>
+                       
 
 
                 </div>
             </div>
         </div>
     </div>
-
-   
-
-
 
 {% else %}
 
@@ -93,9 +88,6 @@
 
 {% endif %}
 
-
-
-
-
-
 {% endblock %}
+
+   

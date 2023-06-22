@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
-    font-size: 16px;
+    
     font-family: 'Dosis', sans-serif;
+    font-size: 16px;
     color: black;
     
 }
@@ -14,6 +16,10 @@ body{
     width: 100%;
     min-height: 100vh;
  
+}
+
+a{
+    text-decoration: none;
 }
 
 /* HEADER */
@@ -712,7 +718,7 @@ footer{
     position: absolute;
     margin-top: -85px;
     z-index: -20;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(192, 6, 6, 0.5);
     transition: all 0.2s;
 }
  
@@ -1021,3 +1027,5 @@ footer{
 }
 
 /* FORMULARIO LOGIN */
+
+

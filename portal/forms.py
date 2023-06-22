@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Mascota, Cliente
+from .models import Mascota, Cliente, Servicio
 
 
 class ContactoForm(forms.Form):
@@ -29,12 +29,12 @@ class NuevaMascotaForm(forms.ModelForm):
         fields = ['nombre','raza','edad','tamanio']
         labels = {'nombre':'Nombre', 'raza':'Raza', 'edad':'Edad', 'tamanio':'Tamaño'}
         widgets = {
-            'nombre': forms.TextInput(attrs={'class':''}),
-            'raza': forms.TextInput(attrs={'class':''}),
-            'edad': forms.TextInput(attrs={'class':''}),
-            'tamanio': forms.TextInput(attrs={'class':''}),
-            # 'vacunas': forms.Select(attrs={'class':''}),
-            'veterinaria': forms.Select(attrs={'class':''}),
+            'nombre': forms.TextInput(attrs={'class':'form-control'}),
+            'raza': forms.TextInput(attrs={'class':'form-control'}),
+            'edad': forms.TextInput(attrs={'class':'form-control'}),
+            'tamanio': forms.TextInput(attrs={'class':'form-control'}),
+            #'vacunas': forms.Select(attrs={'class':''}),
+            'veterinaria': forms.Select(attrs={'class':'form-control'}),
         }
 
 
@@ -50,14 +50,28 @@ class ClienteForm(forms.ModelForm):
         labels = {'nombre':'Nombre', 'apellido':'Apellido', 'telefono':'Telefono', 'domicilio':'Domicilio', 'email':'E-mail', 'dni':'DNI', 'veterinaria':'Sucursal'}
         widgets ={
             
-            'nombre': forms.TextInput(attrs={'class':''}),
-            'apellido': forms.TextInput(attrs={'class':''}),
-            'telefono': forms.NumberInput(attrs={'class':''}),
-            'domicilio': forms.TextInput(attrs={'class':''}),
-            'email': forms.EmailInput(attrs={'class':''}),
-            'dni': forms.NumberInput(attrs={'class':''}),
-            'veterinaria': forms.Select(attrs={'class':''}),
+            'nombre': forms.TextInput(attrs={'class':'form-control'}),
+            'apellido': forms.TextInput(attrs={'class':'form-control'}),
+            'telefono': forms.NumberInput(attrs={'class':'form-control'}),
+            'domicilio': forms.TextInput(attrs={'class':'form-control'}),
+            'email': forms.EmailInput(attrs={'class':'form-control'}),
+            'dni': forms.NumberInput(attrs={'class':'form-control'}),
+            'veterinaria': forms.Select(attrs={'class':'form-control'}),
            }
+        
+
+
+#class ServicioForm(forms.ModelForm):
+#    class Meta:
+#        model = Servicio
+#        fields = ['nombreServicio', 'veterinaria']
+#        labels = {'nombreServicio':'Servicio', 'veterinaria':'Veterinaria'}
+#        widgets = {
+#            'nombreServicio': forms.Select(attrs={'class':''}),
+#            'veterinaria': forms.Select(attrs={'class':''}),
+#       }
+        
+
 
 # class UsuarioForm(forms.ModelForm):
 #     class Meta:

@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 
 from portal.forms import ContactoForm, ClienteForm, NuevaMascotaForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from portal.models import Cliente, Mascota
@@ -34,6 +35,9 @@ def servicios(request):
 
 def adopciones(request):
     return render(request,'portal/adopciones.html')
+
+#def turnos(request):
+#    return render(request,'portal/turnos.html')
 
 
 def contacto(request):
@@ -128,6 +132,7 @@ def contacto(request):
 # def probarBase(request):
 #     return render (request, 'base.html')
 
+
 def mascotas(request):
     if request.method == 'POST':
         form = NuevaMascotaForm(request.POST)
@@ -145,11 +150,27 @@ class RegistroUsuario(CreateView):
     template_name = 'portal/registro.html'
     form_class = ClienteForm
     success_url = reverse_lazy('mascotas_list')
+    
+
+class ClienteListView(LoginRequiredMixin, ListView):
+    login_url = '/log'
+    redirect_field_name = 'redirect_to'
+    model = Cliente
+    template_name = 'portal/cliente_list.html'
+
+    def get_queryset(self, *args, **kwargs):
+        return Mascota.objects.filter(usuario=self.request.user)
 
 
-class MascotasListView(ListView):
+
+class MascotasListView(LoginRequiredMixin, ListView):
+    login_url = '/log'
+    redirect_field_name = 'redirect_to'
     model = Mascota    
     template_name = 'portal/mascotas_list.html'
+
+    def get_queryset(self, *args, **kwargs):
+        return Mascota.objects.filter(usuario=self.request.user)
     
 
     # def get_context_data(self, **kwargs):
@@ -171,11 +192,11 @@ class MascotasListView(ListView):
 #     return render(request, 'portal/mascotas_list.html', {'mascotas':mascotas})
     
 
-class MascotasCreateView(CreateView):
-    model = Mascota
-    form_class = NuevaMascotaForm
-    template_name = 'portal/mascotas.html'
-    success_url = reverse_lazy('mascotas_list')
+#class ServicioListView(ListView):
+#    model = Servicio
+#    form_class = ServicioForm
+#    template_name = 'portal/turnos.html'
+#    success_url = reverse_lazy('mascotas_list')
 
 
 class MascotasUpdateView(UpdateView):
@@ -231,7 +252,7 @@ def crearCliente(request):
 #             context = {'cliente':cliente, 'form':form, 'error':'Algun dato es invalido'}
 #             return render(request, 'portal/editarCliente.html', context)
 
-    
+
 def crearMascota(request):
     if request.method=='GET':
         context={'form':NuevaMascotaForm}
