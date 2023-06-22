@@ -13,7 +13,7 @@ urlpatterns = [
     path('adopciones/', views.adopciones, name='adopciones'),
     path('contacto/', views.contacto, name='contacto'),   
 
-    #path('turnos/', views.ServicioListView.as_view(), name='turnos'), 
+    path('turnos/', views.sacarTurno, name='turnos'), 
 
     path('cliente_list/', views.ClienteListView.as_view(), name = 'cliente_list'),
     

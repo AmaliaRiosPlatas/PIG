@@ -14,7 +14,15 @@ class Veterinaria (models.Model):
 
 class Servicio (models.Model):
     #id = models.CharField(max_length=20, verbose_name= 'ID de Servicios')    #Aca lo mismo
-    nombreServicio = models.CharField(max_length=30, verbose_name= 'Nombre del servicio')
+    SERVICIOS_CHOICE=[
+        ('CASTRACIONES', "Castraciones"),
+        ('VACUNACION', "Vacunacion"),
+        ('BANIO', "Baño"),
+        ('PELUQUERIA', "Peluqueria"),
+        ('CONSULTA', "Consulta"),
+    ]
+    nombreServicio = models.CharField(max_length=30, choices=SERVICIOS_CHOICE, verbose_name= 'Nombre del servicio')
+    
     veterinaria = models.ManyToManyField(Veterinaria, verbose_name= 'Veterinaria')
         
     def __str__(self):

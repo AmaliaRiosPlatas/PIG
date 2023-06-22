@@ -59,6 +59,17 @@ class ClienteForm(forms.ModelForm):
             'veterinaria': forms.Select(attrs={'class':'form-control'}),
            }
         
+class ServicioForm(forms.ModelForm):
+    class Meta:
+        model= Servicio
+        fields = ['veterinaria','nombreServicio']
+        widgets={
+            'veterinaria':forms.Select(), 
+            'nombreServicio':forms.Select(),           
+        }
+
+
+
 
 
 #class ServicioForm(forms.ModelForm):

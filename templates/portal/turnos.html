@@ -4,13 +4,9 @@
 
 
 <main class="login-main">
-
     {% if user.is_authenticated %}
-
     
         <div>
-
-
             {{error}}
             <section style="display: flex;">
                 <div style="width: 33%;"></div>
@@ -20,15 +16,23 @@
                     <form method="POST">
                         {% csrf_token %}
 
-                        {{ form.as_p }}
+                        {{ form1.as_p }}                                             
+                        
+                        <p>
+                            <label for="date">Día</label>
+                            <input type="date" name="date" id="date">
+                        </p>
+                        <p>
+                            <label for="Comentario">Deje su comentario</label>
+                            <input type="text" id="Comentario" name="Comentario">                        
+                        </p>
+                        
 
                         <button type="submit">Solicitar</button>
                     </form>
                 </div>
                 <div style="width: 33%;"></div>
             </section>
-
-
         </div>
 
     {% else %}
@@ -38,9 +42,5 @@
 
     {% endif %}
 </main>
-
-
-
-
 
 {% endblock %}

@@ -7,7 +7,7 @@ from django.template import loader
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 
-from portal.forms import ContactoForm, ClienteForm, NuevaMascotaForm
+from portal.forms import ContactoForm, ClienteForm, NuevaMascotaForm, ServicioForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -263,6 +263,10 @@ def crearMascota(request):
         nuevaMascota.usuario=request.user
         nuevaMascota.save()
         return redirect('mascotas_list')
+    
+def sacarTurno(request):
+    context={'form1':ServicioForm}
+    return render(request, 'portal/turnos.html', context)
 
 
 
