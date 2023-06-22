@@ -14,8 +14,6 @@ urlpatterns = [
     path('contacto/', views.contacto, name='contacto'),   
 
     path('turnos/', views.sacarTurno, name='turnos'), 
-
-    path('cliente_list/', views.ClienteListView.as_view(), name = 'cliente_list'),
     
     path('mascotas_list/', views.MascotasListView.as_view(), name = 'mascotas_list'),
     path('mascotas/', views.crearMascota, name='mascotas'),
@@ -23,9 +21,6 @@ urlpatterns = [
     path('mascotas_eliminar/<int:pk>', views.MascotasDeleteView.as_view(), name='mascotas_eliminar'),
 
     path('nuevoCliente/', views.crearCliente, name='nuevoCliente'),
-    # path('editarCliente/<int:id_cliente>', views.editarCliente, name='editarCliente')
-
-    # path('registro/', views.registro, name='registro'), 
 
    
 

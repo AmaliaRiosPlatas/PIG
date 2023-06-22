@@ -18,29 +18,18 @@ class ContactoForm(forms.Form):
 
 class NuevaMascotaForm(forms.ModelForm):
 
-    #nombre=forms.CharField(label='Nombre', widget=forms.TextInput(attrs={'class':'form-control'}))
-    #raza=forms.CharField(label='Raza', widget=forms.TextInput(attrs={'class':'form-control'}))
-    #edad=forms.CharField(label='Edad', widget=forms.TextInput(attrs={'class':'form-control'}))
-    #tamanio=forms.CharField(label='Tamaño', widget=forms.TextInput(attrs={'class':'form-control'}))
-    #cliente=request.user
-
     class Meta:
         model = Mascota
-        fields = ['nombre','raza','edad','tamanio']
-        labels = {'nombre':'Nombre', 'raza':'Raza', 'edad':'Edad', 'tamanio':'Tamaño'}
+        fields = ['especie', 'nombre','raza','edad','tamanio']
+        labels = {'especie':'Especie', 'nombre':'Nombre', 'raza':'Raza', 'edad':'Edad', 'tamanio':'Tamaño'}
         widgets = {
             'nombre': forms.TextInput(attrs={'class':'form-control'}),
             'raza': forms.TextInput(attrs={'class':'form-control'}),
             'edad': forms.TextInput(attrs={'class':'form-control'}),
             'tamanio': forms.TextInput(attrs={'class':'form-control'}),
-            #'vacunas': forms.Select(attrs={'class':''}),
             'veterinaria': forms.Select(attrs={'class':'form-control'}),
+
         }
-
-
-# class LoginForm(forms.Form):
-#     usuario=forms.CharField(label="Usuario", max_length=50, widget=forms.TextInput(attrs={'class':'usuario'}))
-#     contrasenia=forms.CharField(label="Contraseña", max_length=50, widget=forms.TextInput(attrs={'class':'contrasenia'}))
 
 
 class ClienteForm(forms.ModelForm):
@@ -68,25 +57,4 @@ class ServicioForm(forms.ModelForm):
             'nombreServicio':forms.Select(),           
         }
 
-
-
-
-
-#class ServicioForm(forms.ModelForm):
-#    class Meta:
-#        model = Servicio
-#        fields = ['nombreServicio', 'veterinaria']
-#        labels = {'nombreServicio':'Servicio', 'veterinaria':'Veterinaria'}
-#        widgets = {
-#            'nombreServicio': forms.Select(attrs={'class':''}),
-#            'veterinaria': forms.Select(attrs={'class':''}),
-#       }
-        
-
-
-# class UsuarioForm(forms.ModelForm):
-#     class Meta:
-#         model = Usuario
-#         fields = ['usuario', 'contrasenia']
-#         labels = {'usuario':'Usuario', 'contrasenia':'Contraseña'}
 

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="modal-dialog modal-dialog-centered">
+
     <div class="container">
 
 
@@ -13,10 +13,8 @@
             <div style="width: 50%;">
                 
                 <br>
-    
-                
-                    
-                        <h2>¿Quieres eliminar esta mascota?</h2>
+                        
+                    <h2>¿Quieres eliminar esta mascota?</h2>
                     <form method="POST">
     
                         {% csrf_token %}
@@ -24,7 +22,7 @@
     
     
                         <button class="btn btn-primary" type="submit"><h2>Si</h2></button>
-                        <button class="btn btn-primary"><a href="{% url 'mascotas_list' %}"><h2>Cancelar</h2></a></button>   
+                           
                     </form>
     
                 </div>
@@ -40,7 +38,7 @@
     </div>
                 
     
-</div>
+
 
 
     
