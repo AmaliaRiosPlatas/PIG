@@ -3,7 +3,6 @@
 
 {% block content %}
 
-
     <div class="container">
 
 
@@ -18,11 +17,12 @@
                     <form method="POST">
     
                         {% csrf_token %}
-                        {{ form.as_p }}
-    
-    
-                        <button class="btn btn-primary" type="submit"><h2>Si</h2></button>
-                           
+
+                        
+
+                            <button class="btn btn-warning" type="submit"><h2>Si</h2></button>
+                            <a class="btn btn-success" href="{% url 'mascotas_list'%}">No</a>
+     
                     </form>
     
                 </div>

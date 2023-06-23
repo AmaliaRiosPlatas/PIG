@@ -23,8 +23,13 @@
                         {% csrf_token %}
                         {{ form.as_p }}
 
+                        <div class="d-grid gap-2 .col-3">
+                            <button type="submit" class="btn btn-warning">Guardar</button>
+                            <a class="btn btn-success" href="{% url 'mascotas_list'%}">Cancelar</a>   
+                        </div>
 
-                        <button type="submit" class="btn btn-primary">Guardar</button>    
+
+                         
                     </form>
 
                 </div>
